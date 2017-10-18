@@ -1,0 +1,25 @@
+{
+  "processes": {
+    "app": {
+    "ports": [
+      {
+        "port": 8080,
+        "proto": "tcp",
+        "service": {
+          "name": "mailcatcher-web",
+          "create": true
+        }
+      },
+      {
+        "port": 1025,
+        "proto": "tcp",
+        "service": {
+          "name": "mailcatcher-smtp",
+          "create": true,
+          "check": { "type": "tcp" }
+          }
+        }
+      ]
+    }
+  }
+}
